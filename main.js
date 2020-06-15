@@ -11,3 +11,17 @@ document.addEventListener("scroll", () => {
     navbar.classList.remove("navbar--dark");
   }
 });
+
+// Handle scrolling when tapping on the navbar menu
+const navbarMenu = document.querySelector(".navbar__menu");
+const homeContactBtn = document.querySelector(".home__contact");
+homeContactBtn.addEventListener("click", () => {
+  document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+});
+navbarMenu.addEventListener("click", (event) => {
+  const link = event.target.dataset.link;
+  if (link == null) {
+    return;
+  }
+  document.querySelector(link).scrollIntoView({ behavior: "smooth" });
+});
