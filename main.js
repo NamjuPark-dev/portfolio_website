@@ -21,6 +21,18 @@ navbarMenu.addEventListener("click", (event) => {
   scrollIntoView(link);
 });
 
+// Navbar click
+const navbarMenuItems = document.querySelectorAll(".navbar__menu__item");
+navbarMenu.addEventListener("click", (event) => {
+  navbarMenuItems.forEach((item) => {
+    if (event.target === item) {
+      item.classList.add("active");
+    } else {
+      item.classList.remove("active");
+    }
+  });
+});
+
 // Handle scrolling contact me button
 const homeContactBtn = document.querySelector(".home__contact");
 homeContactBtn.addEventListener("click", () => {
@@ -57,6 +69,14 @@ workBtnContainer.addEventListener("click", (event) => {
   if (filter == null) {
     return;
   }
+
+  // Remove selection from the previous item and selesct the new ones
+  const active = document.querySelector(".category__btn.selected");
+  if (active != null) {
+    active.classList.remove("selected");
+  }
+  event.target.classList.add("selected");
+
   projectContainer.classList.add("anim-out");
   setTimeout(() => {
     projects.forEach((project) => {
