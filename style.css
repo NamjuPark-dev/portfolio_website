@@ -447,6 +447,25 @@ p {
   transform: scale(1.1);
   color: var(--color-green);
 }
+/* Scroll up Btn */
+.arrow-up {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--color-green);
+  transition: all var(--animation-duration) ease-out;
+}
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: visiblePainted;
+}
 
 /* Responsive */
 @media screen and (max-width: 768px) {
