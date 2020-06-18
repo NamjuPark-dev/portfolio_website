@@ -18,6 +18,7 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
 });
 
@@ -31,6 +32,12 @@ navbarMenu.addEventListener("click", (event) => {
       item.classList.remove("active");
     }
   });
+});
+
+// Handle clicking navbar button
+const navbarToggleBtn = document.querySelector(".navbar__toggle_Btn");
+const navbar__menu = navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
 });
 
 // Handle scrolling contact me button
